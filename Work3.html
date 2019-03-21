@@ -89,8 +89,8 @@ function check(){
             else reg.submit();
      }
 </script>
-<input type="button" value="送出" onClick="check()" /> &nbsp;&nbsp;&nbsp;
-<input type="reset" value="清除" /><br><br>
+<input type="button" value="送出" onclick="check()" /> &nbsp;&nbsp;&nbsp;
+<input type="reset" value="清除" /><br/><br/>
 
 <script type="text/javascript">
     function Input(){
@@ -104,17 +104,7 @@ function check(){
 	mtext.value = "12";
 	var dtext = document.getElementById("dId");
 	dtext.value = "25";
-	var gtext = document.getElementById("g").checked;
-	if (grtext == 'true') { alert('男'); }
-	else { alert('女');}
-    //$("input[type=radio][name=gender]:eq(0)").prop("checked", true);
-    //$("input[type=radio][name=gender]").val(["男"]);
-	//var $radios = $("input:radio[name=gender]");
-    //$radios.filter("[value=male]").prop("checked",true);
-	//$("input[name*='gender'][value='男']").prop('checked', true);
-    //$('input[name="gender"]')[0].checked = true;
-	//$('input[@name=gender]').get(0).checked = true;
-	//$("input[@type=radio]").attr("checked",'1');
+	document.getElementById("g").checked = true;
 	   }
   </script>
 <button onclick= "Input()"><font face="華康海報體W9">輸入資料</font></button>
