@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body style="background-image:url(http://images.missyuan.com/attachments/day_110915/20110915_a21190b2279d1176ffbeb2HE4HRYhxwy.gif);width:100%;height:100%;" >
+    <form id="a" action="http://203.64.84.113/x/RQ_RS.aspx" method="post"  name="reg"><br>
+        <font face="華康海報體W9">
+姓名：<input id="nId" name="name"    type="text" size="16" /><br>
+電話：<input id="tId" name="tellphone" type="text" size="16" /><br>
+生日：
+<input id="yId" name="year" type="text" size="5" />
+年
+<select id="mId" name="month">
+       <option value="00">&lt;請選取&gt;</option>
+       <option value="01">01</option>
+       <option value="02">02</option>
+       <option value="03">03</option>
+       <option value="04">04</option>
+       <option value="05">05</option>
+       <option value="06">06</option>
+       <option value="07">07</option>
+       <option value="08">08</option>
+       <option value="09">09</option>
+       <option value="10">10</option>
+       <option value="11">11</option>
+       <option value="12">12</option>
+</select>
+
+月
+<select id="dId" name="day">
+       <option value="00">&lt;請選取&gt;</option>
+       <option value="01">01</option>
+       <option value="02">02</option>
+       <option value="03">03</option>
+       <option value="04">04</option>
+       <option value="05">05</option>
+       <option value="06">06</option>
+       <option value="07">07</option>
+       <option value="08">08</option>
+       <option value="09">09</option>
+       <option value="10">10</option>
+       <option value="11">11</option>
+       <option value="12">12</option>
+       <option value="13">13</option>
+       <option value="14">14</option>
+       <option value="15">15</option>
+       <option value="16">16</option>
+       <option value="17">17</option>
+       <option value="18">18</option>
+       <option value="19">19</option>
+       <option value="20">20</option>
+       <option value="21">21</option>
+       <option value="22">22</option>
+       <option value="23">23</option>
+       <option value="24">24</option>
+       <option value="25">25</option>
+       <option value="26">26</option>
+       <option value="27">27</option>
+       <option value="28">28</option>
+       <option value="29">29</option>
+       <option value="30">30</option>
+       <option value="31">31</option>
+</select>日<br>
+性別：
+<input id="g" type="radio" name="gender" value="男" />男  &nbsp;&nbsp;&nbsp; 
+<input id="g1" type="radio" name="gender" value="女" />女 <br><br>
+
+<script>
+function check(){
+
+            if(reg.name.value == ""){
+                    alert("未輸入姓名!");
+            }
+	    else if(reg.tellphone.value == ""){
+                    alert("未輸入電話!");
+            }
+	    else if (isNaN(reg.tellphone.value)){
+		alert("電話請輸入數字!");
+	    }
+            else if(reg.year.value == "" || reg.month.value == "00" || reg.day.value == "00"){
+                    alert("未輸入完整生日日期!");
+            }
+            else if(!reg.gender[0].checked && !reg.gender[1].checked){
+                     alert("未選擇性別!");
+            }
+            else reg.submit();
+     }
+</script>
+<input type="button" value="送出" onClick="check()" /> &nbsp;&nbsp;&nbsp;
+<input type="reset" value="清除" /><br><br>
+
+<script type="text/javascript">
+    function Input(){
+	var ntext = document.getElementById("nId");
+	ntext.value = "Chalmers";
+	var ttext = document.getElementById("tId");
+	ttext.value = "12345678";
+	var ytext = document.getElementById("yId");
+	ytext.value = "1974";
+	var mtext = document.getElementById("mId");
+	mtext.value = "12";
+	var dtext = document.getElementById("dId");
+	dtext.value = "25";
+	var gtext = document.getElementById("g").checked;
+	if (grtext == 'true') { alert('男'); }
+	else { alert('女');}
+    //$("input[type=radio][name=gender]:eq(0)").prop("checked", true);
+    //$("input[type=radio][name=gender]").val(["男"]);
+	//var $radios = $("input:radio[name=gender]");
+    //$radios.filter("[value=male]").prop("checked",true);
+	//$("input[name*='gender'][value='男']").prop('checked', true);
+    //$('input[name="gender"]')[0].checked = true;
+	//$('input[@name=gender]').get(0).checked = true;
+	//$("input[@type=radio]").attr("checked",'1');
+	   }
+  </script>
+<button onclick= "Input()"><font face="華康海報體W9">輸入資料</font></button>
+
+<script type="text/javascript">
+     function Show(){
+	alert('姓名:'+reg.name.value);
+	alert('電話:'+reg.tellphone.value);
+	alert('生日:'+reg.year.value+'年'+reg.month.value+'月'+reg.day.value+'日');
+	var radionum = document.getElementById("a").gender;
+	for(var i=0;i<radionum.length;i++){
+		if(radionum[i].checked){gender = radionum[i].value}
+	}
+	alert('性別:'+gender); 
+	   }
+</script>
+<button onclick= "Show()"><font face="華康海報體W9">顯示資料</font></button>
+</font>
+</form>
+</body>
+</html>
