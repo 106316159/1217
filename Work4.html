@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -22,8 +23,9 @@
     </style>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
+    
 <body style="background-image: url(http://images.missyuan.com/attachments/day_110915/20110915_a21190b2279d1176ffbeb2HE4HRYhxwy.gif); width: 100%; height: 100%;">
-    <form id="a" action="http://203.64.84.113/x/RQ_RS.aspx" method="post" name="reg">
+    <form id="a" name="reg">
         <br />
         <font face="華康海報體W9">
         <font color="green"><h2>健康四步驟</h2>
@@ -177,10 +179,10 @@
     </td>
   </tr>
 </table><br/>
-            <input type="button" name="ok" id="ok" value="確定" style="font-family:華康海報體W9;"/>
-            <hr color="brown" size="10" />
-        </font>
+        <input type="button" name="ok" id="ok" value="確定" style="font-family:華康海報體W9;"/>
+        <hr color="brown" size="10" />
             <ul id="Answers"></ul>
+            <table id="myTable" style="font-family:華康海報體W9;"/></table>
     <script language="Javascript">
         var btn = document.getElementById("ok");
         btn.onclick = function () {
@@ -241,6 +243,14 @@
                 text1 += "</li>";
             }
             document.getElementById("Answers").innerHTML = text1;
+
+            var table = document.getElementById("myTable");
+            for (var j = 0; j < answers.length; j++) {
+                var row = table.insertRow(-1);
+                var c = row.insertCell(0);
+                c.innerHTML = answers[j];
+            }
+            
         };
     </script>
         </font>
